@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: count-app
+spec:
+    replicas: 2
+    template:
+        metadata:
+            labels:
+                app: counter
+                environment: production
+        spec:
+            containers:
+                - name: app-counter
+                  image: k:1
+                  env:
+                      - name: DATABASE_URI
+                        value: "postgresql://postgres:development@192.168.88.50/postgres"
+                  ports:
+                      - containerPort: 5000
