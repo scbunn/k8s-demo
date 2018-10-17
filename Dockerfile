@@ -1,5 +1,5 @@
 FROM python:3-alpine
-LABEL maintainer="stephen.bunn@avalara.com"
+LABEL maintainer="scbunn@sbunn.org"
 EXPOSE 5000
 
 RUN mkdir -p /usr/local/k8s 
